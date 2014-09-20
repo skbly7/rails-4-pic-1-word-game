@@ -1,0 +1,15 @@
+This repo contains code of my first ruby on rails app made.
+(Sorry for bad way of coding, and completely ruining MVC, as it was my first time with rails)
+
+Application Features :
+1. 4pic 1word game
+2. Questions can be CRUD using login "shivam" p: jaadu123
+3. Users can be CRUD using login "shivam"
+4. Signup feature
+5. omniauth for FB and GITHUB login.
+6. Recommend a friend using email.
+7. Leaderboard
+8. Different levels with different time limits. (Easy JS implementation, easy to hack.. :P )
+9. User can CRU on his/her profile.
+
+And saying yet again, it was first app in rails, so many many things have not been made as they should have been. Yet, it might be useful for many.. :)
