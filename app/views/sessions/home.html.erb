@@ -1,0 +1,96 @@
+<link rel="stylesheet" type="text/css" href="/assets/960.css" />
+<link rel="stylesheet" type="text/css" href="/assets/reset.css" />
+<link rel="stylesheet" type="text/css" href="/assets/text.css" />
+<link rel="stylesheet" type="text/css" href="/assets/blue.css" />
+<link type="text/css" href="/assets/ui.css" rel="stylesheet" />  
+<link rel="text/css" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css" type="text/css" />
+<script type="text/javascript" src="/assets/jquery.blend.js"></script>
+<script type="text/javascript" src="/assets/ui.core.js"></script>
+<script type="text/javascript" src="/assets/ui.sortable.js"></script>    
+<script type="text/javascript" src="/assets/ui.dialog.js"></script>
+<script type="text/javascript" src="/assets/ui.datepicker.js"></script>
+<script type="text/javascript" src="/assets/effects.js"></script>
+<script type="text/javascript" src="/assets/flot/jquery.flot.pack.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#example').dataTable();
+} );
+</script>
+<div class="container_16" id="wrapper">
+	<div class="grid_8" id="logo">4 PICTURE ONE ANSWER</div>
+    <div class="grid_8">
+      <div id="user_tools"><span>Welcome <%=@current_user.username%>  |  <a href="logout">Logout</a></span></div>
+    </div> 
+<div class="grid_16" id="header">
+<div id="menu">
+	<ul class="group" id="menu_group_main">
+		<li class="item first" id="one"><a href="home" class="main current"><span class="outer"><span class="inner dashboard">Dashboard</span></span></a></li>
+    <li class="item middle" id="six"><a href="tq" class="main"><span class="outer"><span class="inner event_manager">Take Quiz</span></span></a></li>        
+        <li class="item middle" id="three"><a href="share"><span class="outer"><span class="inner reports png">Reports</span></span></a></li>
+    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"></a></li>        
+    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"></a></li>
+    <% if @current_user.username=="shivam" %>      
+        <li class="item middle" id="four"><a href="edit_u" class="main"><span class="outer"><span class="inner users">Users</span></span></a></li>        <li class="item middle" id="two"><a href="edit_q" class="main"><span class="outer"><span class="inner content">Content</span></span></a></li>
+    <% else %>
+    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"></a></li>        
+    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"></a></li>
+    <% end %>
+		<li class="item last" id="eight"><a href="setting" class="main"><span class="outer"><span class="inner settings">Settings</span></span></a></li>        
+    </ul>
+</div>
+</div>
+
+
+    <div class="grid_16" id="content">
+    <div class="grid_9">
+    <h1 class="dashboard">Dashboard</h1>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="portlets">
+    <div class="clear"></div>
+    <div class="portlet">
+        <div class="portlet-header fixed"><img src="assets/user.gif" width="16" height="16" alt="Top Scores" />Leaderboard<br>This is leaderboard, of game module.</div>
+		<div class="portlet-content nopadding">
+        <form action="" method="post">
+          <table width="100%" cellpadding="0" cellspacing="0" id="example" summary="Employee Pay Sheet">
+            <thead>
+              <tr>
+                <th width="34" scope="col">Sno</th>
+                <th width="136" scope="col">Name</th>
+                <th width="102" scope="col">Username</th>
+                <th width="109" scope="col">Level 1 Score</th>
+                <th width="129" scope="col">Level 2 Score</th>
+                <th width="171" scope="col">Level 3 Score</th>
+                <th width="123" scope="col">Through Outh ?</th>
+                <th width="90" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+
+        
+<% (1..(@length-1)).each do |i| %>
+              <tr>
+                <td width="34"> <%= i %></td>
+                <td><%= @leader[i].username %></td>
+                <td><%= @leader[i].email %></td>
+                <td><%= @leader[i].highest1 %></td>
+                <td><%= @leader[i].highest2 %></td>
+                <td><%= @leader[i].highest3 %></td>
+                <td><%= @leader[i].facebook %></td>
+                <td width="90"></td>
+              </tr>
+<% end %>
+            </tbody>
+          </table>
+        </form>
+		</div>
+      </div>
+   </div>
+    <div class="clear"> </div>
+  </div>
+<div class="clear"> </div>
+</div>
+<div class="container_16" id="footer">

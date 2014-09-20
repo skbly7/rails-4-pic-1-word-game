@@ -1,0 +1,65 @@
+<link rel="stylesheet" type="text/css" href="/assets/960.css" />
+<link rel="stylesheet" type="text/css" href="/assets/reset.css" />
+<link rel="stylesheet" type="text/css" href="/assets/text.css" />
+<link rel="stylesheet" type="text/css" href="/assets/blue.css" />
+<link type="text/css" href="/assets/ui.css" rel="stylesheet" />  
+<script type="text/javascript" src="../../ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/jquery.blend.js"></script>
+<script type="text/javascript" src="/assets/ui.core.js"></script>
+<script type="text/javascript" src="/assets/ui.sortable.js"></script>    
+<script type="text/javascript" src="/assets/ui.dialog.js"></script>
+<script type="text/javascript" src="/assets/ui.datepicker.js"></script>
+<script type="text/javascript" src="/assets/effects.js"></script>
+<script type="text/javascript" src="/assets/flot/jquery.flot.pack.js"></script>
+
+<div class="container_16" id="wrapper">
+	<div class="grid_8" id="logo">4 PICTURE ONE ANSWER</div>
+    <div class="grid_8">
+      <div id="user_tools"><span>Welcome <%=@current_user.username%>  |  <a href="logout">Logout</a></span></div>
+    </div>
+<div class="grid_16" id="header">
+<div id="menu">
+	<ul class="group" id="menu_group_main">
+		<li class="item first" id="one"><a href="home" class="main "><span class="outer"><span class="inner dashboard">Dashboard</span></span></a></li>
+    <li class="item middle" id="six"><a href="tq" class="main"><span class="outer"><span class="inner event_manager">Take Quiz</span></span></a></li>        
+        <li class="item middle" id="three"><a href="share" class="current"><span class="outer"><span class="inner reports png">Reports</span></span></a></li>
+    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"></a></li>        
+    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"></a></li>
+    <% if @current_user.username=="shivam" %>      
+        <li class="item middle" id="four"><a href="edit_u" class="main"><span class="outer"><span class="inner users">Users</span></span></a></li>        <li class="item middle" id="two"><a href="edit_q" class="main "><span class="outer"><span class="inner content">Content</span></span></a></li>
+    <% else %>
+    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"></a></li>        
+    <li class="item middle" id="six"><a href="#" class="main"><span class="outer"></a></li>
+    <% end %>
+		<li class="item last" id="eight"><a href="setting" class="main"><span class="outer"><span class="inner settings">Settings</span></span></a></li>        
+    </ul>
+</div>
+</div>
+    <div class="grid_16" id="content">
+    <div class="grid_9">
+    <h1>Share you best score</h1>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="portlets">
+    <div class="clear"></div>
+    <div class="portlet">
+        <div class="portlet-header fixed"><img src="assets/user.gif" width="16" height="16" alt="Top Scores" /><%=@current_user.username%>'s <br/>This is an example use of Twitter share<br/> (Facebook share on all pages, while the person is logged in)<br/></div>
+        LEVEL 1<br>
+<a href="http://twitter.com/share?url=http://localhost:3000/login&text=This%20is%20the%20best%20game%20i%20have%20played%20till.%20My%20score%20is%20<%= @current_user.highest1%>.%20Can%20you%20beat%20me%20??" target="_blank">
+<img alt='Facebook'src='<% "#{request.protocol}#{request.host}" %>assets/tweet.png' style="position:fixed;bottom:100;right:100"/>
+</a>        <br/><br/><br/><br/><br/><br/>LEVEL 2<br>
+<a href="http://twitter.com/share?url=http://localhost:3000/login&text=This%20is%20the%20best%20game%20i%20have%20played%20till.%20My%20score%20is%20<%= @current_user.highest2%>.%20Can%20you%20beat%20me%20??" target="_blank">
+<img alt='Facebook'src='<% "#{request.protocol}#{request.host}" %>assets/tweet.png' style="position:fixed;bottom:100;right:100"/>
+</a>        <br/><br/><br/><br/><br/><br/>LEVEL 3<br>
+<a href="http://twitter.com/share?url=http://localhost:3000/login&text=This%20is%20the%20best%20game%20i%20have%20played%20till.%20My%20score%20is%20<%= @current_user.highest3%>.%20Can%20you%20beat%20me%20??" target="_blank">
+<img alt='Facebook'src='<% "#{request.protocol}#{request.host}" %>assets/tweet.png' style="position:fixed;bottom:100;right:100"/>
+</a>
+      </div>
+   </div>
+    <div class="clear"> </div>
+  </div>
+<div class="clear"> </div>
+
+</div>
+<div class="container_16" id="footer">

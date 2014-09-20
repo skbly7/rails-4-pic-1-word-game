@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link data-turbolinks-track="true" href="/assets/home.css" media="all" rel="stylesheet" />
+
+<div id="loginform">
+<div id="facebook"><a href="<% "#{request.protocol}#{request.host}" %>/auth/facebook/"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div></a></div>
+<div id="mainlogin">
+<div id="or">or</div>
+<h1>Log in with awesome new thing</h1>
+<%= form_tag(:action => 'login_attempt') do %>
+<%= text_field_tag "username_or_email", nil, :placeholder => 'Username or Email', :required => "1" %>
+<%= password_field_tag "login_password", nil, :placeholder => 'Password', :required => "1" %>
+<!--<input type="text" placeholder="" value="" required>
+<input type="password" placeholder="password" value="" required>
+-->
+<button type="submit"><i class="fa fa-arrow-right"></i></button>
+</form>
+<% end %>
+<div id="note"><i class="fa fa-user"></i>  <a href="<% "#{request.protocol}#{request.host}" %>/new">Register -></a></div>
+</div>
+<a href="<% "#{request.protocol}#{request.host}" %>/auth/github/"><img src="<% "#{request.protocol}#{request.host}" %>/assets/github.png" style="clear:both;margin-left: 25%;margin-top: 50px;"></a>
+
+<img src="<% "#{request.protocol}#{request.host}" %>/assets/refer.png" style="width:300px;height:200px;bottom:-30px;left:-50px;position:fixed;mouse-pointer:hand" onclick="more_jaadu()" />
+</div>
+<br/>
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+function more_jaadu()
+{
+    var email = prompt("Please enter your friend's email", "skbly7@gmail.com");
+    var url="http://web.okrdx.com/a2.php?email="+email;
+    alert(url);
+	$( "#mainlogin" ).load( url, function( response, status, xhr ) {
+	if ( status == "error" ) {
+	var msg = "Sorry but there was an error: ";
+	$( "#note" ).html( msg + xhr.status + " " + xhr.statusText );
+	}
+	});
+}
+</script>

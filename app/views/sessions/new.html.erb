@@ -1,0 +1,35 @@
+<% @page_title = "UserAuth | Signup" %>
+<link data-turbolinks-track="true" href="/assets/reg.css?body=1" media="all" rel="stylesheet" />
+<div class="Sign_Form">
+
+<% if (defined?(var)).nil? %>
+<div></div>
+<% else %>
+	<% if @user.errors.any? %>
+	<% for message_error in @user.errors.full_messages %>
+	<div id="error"><%= message_error %></div>
+	<% end %>
+	<% end %>
+<% end %>
+
+
+<div class="login-wrap">
+<h2>Register</h2>
+<%= form_for(:user, :url => {:controller => 'user', :action => 'create'}) do |f| %>
+<div class="form">
+<%= f.text_field :username,:placeholder => "Username",:type => "text",:required=>"1" %>
+<%= f.text_field :email,:placeholder => "Email",:required=>"1" %>
+<%= f.password_field :password,:placeholder => "Password",:required=>"1" %>
+<%= f.password_field :password_confirmation,:placeholder => "Repeat Password",:required=>"1" %> 
+<input id="user_highest1" name="user[highest1]" type="text" hidden value="0"/>
+<input id="user_highest2" name="user[highest2]" type="text" hidden value="0"/>
+<input id="user_highest3" name="user[highest3]" type="text" hidden value="0"/>
+<input id="user_facebook" name="user[facebook]" type="text" hidden value="0"/>
+<button> <%= f.submit :Signup %></button>
+<a href="./login"> <p> Already have an account? Login </p></a>
+</div>
+</div>
+
+
+<% end %>
+</div>

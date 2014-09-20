@@ -1,0 +1,33 @@
+<body style="background:url('<% "#{request.protocol}#{request.host}" %>/assets/bg-play.jpg');background-size:100% auto;">
+<style>
+.yo{
+padding:20px;
+background:rgba(170,180,120,0.7);
+height:80px;
+border:2px solid black;
+width:200px;
+margin:auto;
+margin-top:20px;
+}
+.yo a{
+	margin:20px;
+	text-decoration: none;
+	font-size:30px;
+	color:white;
+}
+</style>
+<% if @score %>
+
+<div style="background:rgba(50,150,50,0.6);width:250px;margin:auto;padding:15px;border-radius:10px;color:white;">Your new score is <%= @score %> <br/>(old score was : <%= @scoreo %>) <br/>
+
+<a href="http://twitter.com/share?url=http://localhost:3000/login&text=This%20is%20the%20best%20game%20i%20have%20played%20till.%20I%20just%20got%20score%20is%20<%= @score%>.%20Can%20you%20beat%20me%20??" target="_blank">
+<img alt='Facebook'src='<% "#{request.protocol}#{request.host}" %>assets/tweet.png' style="width:150px;height:50px;"/>
+</a> 
+
+</div>
+<% end %>
+
+<div class="yo" style="margin-right:30%;"><a href="/play1" class="shake shake-little">LEVEL 1</a></div>
+<div class="yo" style="margin-right:10%;"><a href="/play2">LEVEL 2</a></div>
+<div class="yo" style="margin-right:25%;"><a href="/play3">LEVEL 3</a></div>
+</body>

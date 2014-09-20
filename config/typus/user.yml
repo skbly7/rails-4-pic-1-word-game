@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+User:
+  fields:
+    default: username, email, password, highest1, highest2, highest3, facebook
+    form: username, email, password, highest1, highest2, highest3, facebook
+  relationships: 
+  application: Application

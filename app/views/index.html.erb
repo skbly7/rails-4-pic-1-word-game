@@ -1,0 +1,16 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link data-turbolinks-track="true" href="/assets/home.css?body=1" media="all" rel="stylesheet" />
+<div id="loginform">
+<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div></div>
+<div id="mainlogin">
+<div id="or">or</div>
+<h1>Log in with awesome new thing</h1>
+<%= form_tag(:action => 'login_attempt') do %>
+<input type="text" placeholder="username or email" value="" required>
+<input type="password" placeholder="password" value="" required>
+<button type="submit"><i class="fa fa-arrow-right"></i></button>
+</form>
+<% end %>
+<div id="note"><i class="fa fa-user"></i>  <a href="new">Register -></a></div>
+</div>
+</div>

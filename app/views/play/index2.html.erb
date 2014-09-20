@@ -1,0 +1,30 @@
+<script type="text/javascript">
+            function countDown(secs, elem)
+            {
+                var element = document.getElementById(elem);
+                element.innerHTML = "<h2>You have <b>"+secs+"</b> seconds to answer the questions</h2>";
+                if(secs < 1) {
+                    document.quiz.submit();
+                }
+                else
+                {
+                    secs--;
+                    setTimeout('countDown('+secs+',"'+elem+'")',1500);
+                }
+            }
+
+            function validate() {
+                return true;
+            }
+            </script> 
+            <div id="status"></div>
+            <script type="text/javascript">countDown(20,"status");</script>
+<div style="background:rgba(70,90,200,0.1);border-radius:40px;width:800px;">
+<% i=0 %>
+<form action="/mark2" name="quiz">
+<% @ques.each do |element| %>
+<% i=i+1 %>
+  <div style="margin-left:250px;padding-top:50px;"><%= image_tag element.image %><br/>Answer : <input type="text" name="<%= element.id %>"></div>
+<% end %>
+<input type="submit" value="Submit Answers" style="margin-left:330px;margin-bottom:50px;margin-top:50px;">
+</div>
